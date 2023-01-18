@@ -1,0 +1,29 @@
+# Data section​
+data;
+
+# Set Definition​
+set PP:=
+coal
+gas;
+
+# Demand
+param demand :=
+250;
+
+# Fuel Requirement info​
+param fuel_req :=
+coal 3
+gas 2;
+
+# Cost of production info​
+param prod_cost:=
+coal 300
+gas 250;
+
+# Fuel Availability info​
+param fuel_avail:=
+coal 600
+gas 300;
+
+# End statement ​
+end;

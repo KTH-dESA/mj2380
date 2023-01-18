@@ -1,0 +1,24 @@
+# Set and Problem declaration​
+set PP;
+
+# Parameter definition​
+param fuel_req {i in PP};
+param prod_cost {i in PP};
+param fuel_avail {i in PP};
+param demand >= 0;
+
+# Variable description​
+var x {i in PP} >=0;
+
+# Objective function​
+minimize z: sum{i in PP} prod_cost[i] * x[i];
+
+# Constraint Specification​
+s.t. Fuel {i in PP}: fuel_req[i] * x[i] <= fuel_avail[i];
+s.t. Production : sum{i in PP} x[i] >= demand;
+
+# Solve statement​
+solve;
+
+# End statement​
+end;
